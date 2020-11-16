@@ -45,13 +45,13 @@ const fn0 = (header: IHeader, option: IOption) => {
         return e;
    })
 };
-const fn1 = (key: string, value: PrimitiveTypes) => { if(value) Settings.store[key] = value }
+const fn1 = (key: string, value: PrimitiveTypes) => { Settings.store[key] = value }
 const fn2 = (key: string, defaultValue: PrimitiveTypes) => {  return Settings.store[key] ? Settings.store[key] : defaultValue }
 
 export const toOption = action(fn0);
-
 export const toStore = action(fn1);
-export const fromStore = action(fn2);
+
+export const fromStore = fn2;
 
 
 export default Settings;
