@@ -1,0 +1,210 @@
+.base-view {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../app/assets/background.png') top no-repeat;
+    background-size: cover;
+    animation: bg-animation 45s infinite;
+    -webkit-animation: bg-animation 45s infinite;
+}
+
+.base-view__content{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #dddddd;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+}
+
+.base-view__sidebar {
+    flex: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid #dddddd;
+    position: relative;
+    -webkit-transition: background 1.5s ease;
+    -moz-transition: background 1.5s ease;
+    -o-transition: background 1.5s ease;
+    transition: background 1.5s ease;
+}
+
+.base-view__header {
+    font-family: 'Lato',sans-serif;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+.base-view__sub-header {
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.base-view__app-wrapper {
+    flex: 0.7;
+    display: flex;
+}
+
+.base-view__app {
+    flex: 1;
+    -webkit-box-shadow: inset 2px 0px 5px -2px rgba(0,0,0,0.15);
+    -moz-box-shadow: inset 2px 0px 5px -2px rgba(0,0,0,0.15);
+    box-shadow: inset 2px 0px 5px -2px rgba(0,0,0,0.15);
+    overflow-y: auto;
+}
+
+.base-view__menu{
+    height: 100%;
+    min-width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: inset 2px 0px 5px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: inset 2px 0px 5px 1px rgba(0,0,0,0.15);
+    box-shadow: inset 2px 0px 5px 1px rgba(0,0,0,0.15);
+}
+
+.base-view__menu ul {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.base-view__menu ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0;
+}
+
+.base-view__menu-tile {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.25rem;
+}
+
+.base-view__menu-active svg {
+    -webkit-animation: jello-horizontal 0.9s both;
+	animation: jello-horizontal 0.9s both;
+}
+
+.base-view__headline{
+    display: flex;
+    border-bottom: 1px solid #dddddd;
+}
+
+.base-view__headline-wrapper {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.base-view__breadcrumbs ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base-view__breadcrumbs ul li {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 0 0 0.15rem;
+    display: inline-block;
+    letter-spacing: 0.12rem;
+    font-size: 0.85rem;
+    line-height: 1rem;
+}
+
+.base-view__breadcrumbs ul li::before {
+    content: '/';
+    padding-right: 0.15rem;
+}
+
+a, 
+a:link, 
+a:visited,
+a:active {
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 979px) {
+    .base-view__content{
+        flex-direction: column;
+    }
+
+    .base-view__app-wrapper{
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .base-view__app {
+        height: 100%;
+    }
+
+    .base-view__sidebar {
+        flex: unset;
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        height: 8rem;
+    }
+
+    .base-view__menu {
+        height: auto;
+        min-width: unset;
+    }
+
+    .base-view__menu ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .base-view__menu ul li {
+        display: inline-block;
+    }
+
+    .base-view__menu ul li a {
+        margin: 1rem 0;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .base-view__content{
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .base-view__content{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {}
