@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BaseView from '../components/base-view/BaseView';
 import SampleView from '../components/sample-view/SampleView';
 import SettingsView from '../components/setting-view/SettingsView';
+import SqlView from './sql-view/SqlView';
 
 // ---------
 
@@ -13,25 +14,16 @@ export default function App() {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <BaseView view={SampleView} background="/assets/home.jpg" />
-                </Route>
-                <Route path="/theory/:more">
-                    <BaseView view={SampleView} background="/assets/theory.jpg" nav />
+                    <BaseView view={SqlView} name={"AlaSQL"} description={"In-memory database on browser"} />
                 </Route>
                 <Route path="/theory">
-                    <BaseView view={SampleView} background="/assets/theory.jpg" />
-                </Route>
-                <Route path="/settings/:more">
-                    <BaseView view={SettingsView} background="/assets/settings.jpg" nav dark />
+                    <BaseView view={SampleView} />
                 </Route>
                 <Route path="/settings">
-                    <BaseView view={SettingsView} background="/assets/settings.jpg" dark />
-                </Route>
-                <Route path="/author/:more">
-                    <BaseView view={SampleView} background="/assets/author.jpg" nav dark />
+                    <BaseView view={SettingsView} />
                 </Route>
                 <Route path="/author">
-                    <BaseView view={SampleView} background="/assets/author.jpg" dark />
+                    <BaseView view={SampleView} />
                 </Route>
             </Switch>
         </Router>

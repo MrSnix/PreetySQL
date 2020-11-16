@@ -1,4 +1,4 @@
-export type PrimitiveTypes = string | number | boolean;
+export type PrimitiveTypes = string | number | boolean | object;
 
 export interface IComponent {
     input?: JSX.Element,

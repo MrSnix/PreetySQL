@@ -1,0 +1,44 @@
+.sql-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sql-view__display{
+    flex: 1;
+}
+
+.sql-view__ctr-box{
+    border-top: 1px solid #d2d2d2;
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+}
+
+.sql-view__ctr-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sql-view__ctr-group p {
+    margin-left: 1rem;
+}
+
+.sql-view__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d2d2d2;
+    margin: 0 1rem;
+}
+
+.sql-view__input-btn {
+    border: none;
+    border-left: 1px solid #d2d2d2;
+    background-color: #ffffff;
+    padding: 1rem;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
