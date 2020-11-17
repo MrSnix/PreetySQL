@@ -1,7 +1,14 @@
 import React, { ElementType } from 'react';
 import './BaseView.css';
 
-import { Home, Sliders, User, BookOpen, ArrowLeft } from 'react-feather';
+import {
+    Home,
+    Sliders,
+    User,
+    BookOpen,
+    ArrowLeft,
+    HelpCircle,
+} from 'react-feather';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import { Location } from 'history';
 
@@ -22,18 +29,29 @@ export default function BaseView(props: {
                 <div
                     className="base-view__sidebar"
                     style={{
-                        backgroundImage: 'url(' + background + ')',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
                         color: !dark ? '#000000' : '#FFFFFF',
                     }}
                 >
-                    <h1 className="base-view__header">
-                        {name ? name : 'Title'}
-                    </h1>
-                    <h2 className="base-view__sub-header">
-                        {description ? description : 'Subtitle'}
-                    </h2>
+                    <div className="base-view__header-wrapper">
+                        <h1 className="base-view__header">
+                            {name ? name : 'Title'}
+                        </h1>
+                        <h2 className="base-view__sub-header">
+                            {description ? description : 'Subtitle'}
+                        </h2>
+                    </div>
+                    <div
+                        className="base-view__sidebar-background"
+                        style={{
+                            backgroundImage: 'url(' + background + ')',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            backgroundSize: 'contain',
+                        }}
+                    />
+                    <div className="base-view__copyright">
+                        <p>Developed with ❤️</p>
+                    </div>
                 </div>
                 <div className="base-view__app-wrapper">
                     <div className="base-view__app">
@@ -78,12 +96,12 @@ export default function BaseView(props: {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/author"
+                                    to="/about"
                                     activeClassName="base-view__menu-active"
                                 >
-                                    <User />
+                                    <HelpCircle />
                                     <h4 className="base-view__menu-tile">
-                                        Author
+                                        About
                                     </h4>
                                 </NavLink>
                             </li>

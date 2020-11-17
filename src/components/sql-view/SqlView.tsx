@@ -4,6 +4,7 @@ import { fromStore, toStore } from '../../app/Settings';
 import ReactJson from 'react-json-view';
 import { observer } from 'mobx-react';
 import './SqlView.css';
+import { Navigation2 } from 'react-feather';
 
 export default observer(function SqlView() {
     return (
@@ -29,14 +30,31 @@ export default observer(function SqlView() {
                             if (e.key === 'Enter') execQuery();
                         }}
                     />
-                    <button className="sql-view__input-btn" onClick={execQuery}>
-                        Send
+                    <button
+                        className={'sql-view__input-btn ' + parseQuery()}
+                        onClick={execQuery}
+                    >
+                        <Navigation2 />
                     </button>
                 </div>
             </div>
         </div>
     );
 });
+
+const parseQuery = () => {
+    const input = fromStore('sql-query', '');
+    let obj = '';
+    if (input) {
+        try {
+            alasql.parse(input);
+            obj = 'sql-ok';
+        } catch (ex) {
+            obj = 'sql-err';
+        }
+    }
+    return obj;
+};
 
 const execQuery = () => {
     // Retrieve query

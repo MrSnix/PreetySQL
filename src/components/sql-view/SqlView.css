@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 3.5rem;
 }
 
 .sql-view__ctr-group p {
@@ -36,6 +37,9 @@
 }
 
 .sql-view__input-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     border-left: 1px solid #d2d2d2;
     background-color: #ffffff;
@@ -43,4 +47,16 @@
     text-transform: uppercase;
     outline: none;
     cursor: pointer;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+.sql-err {
+    color: #b62020;
+}
+
+.sql-ok {
+    color: #4a934a;
 }
