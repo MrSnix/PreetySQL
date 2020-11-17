@@ -8,6 +8,7 @@
 .sql-view__display{
     flex: 1;
     margin: 2rem;
+    overflow-y: auto;
 }
 
 .sql-view__ctr-box{
