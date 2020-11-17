@@ -5,15 +5,15 @@
     flex-direction: column;
 }
 
-.sql-view__display{
+.sql-view__display {
     flex: 1;
     margin: 2rem;
     overflow-y: auto;
 }
 
-.sql-view__ctr-box{
+.sql-view__ctr-box {
     border-top: 1px solid #d2d2d2;
-    font-family: 'Lato',sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
 }
 

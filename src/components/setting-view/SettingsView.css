@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-top: 1px solid #EAEAEA;
-    border-bottom: 1px solid #EAEAEA;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
     color: #a0a0a0;
 }
 
@@ -37,7 +37,8 @@
     margin: 0;
 }
 
-.settings-view__option-item, .settings-view__option-item-disabled {
+.settings-view__option-item,
+.settings-view__option-item-disabled {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     margin: 1rem;
@@ -122,30 +123,30 @@
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 2rem;
 }
 
 .settings-view__slider:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 0.85rem;
     width: 0.85rem;
     left: 4px;
     bottom: 3px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 100%;
 }
 
 .settings-view__checkbox:checked + .settings-view__slider {
-    background-color: #2196F3;
+    background-color: #2196f3;
 }
 
 .settings-view__checkbox:focus + .settings-view__slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196f3;
 }
 
 .settings-view__checkbox:checked + .settings-view__slider:before {

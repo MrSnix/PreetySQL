@@ -1,16 +1,15 @@
-import alasql from "alasql";
+import alasql from 'alasql';
 
 const SQL_DB = {
     INIT: () => {
         const { CREATE_TABLE, INSERTS } = SQL_DB;
         // Generate tables
-        alasql(CREATE_TABLE)
+        alasql(CREATE_TABLE);
         // Populate tables
-        alasql(INSERTS.BRANDS)
-        alasql(INSERTS.CATEGORIES)
-        alasql(INSERTS.PRODUCTS)
-    }
-    ,
+        alasql(INSERTS.BRANDS);
+        alasql(INSERTS.CATEGORIES);
+        alasql(INSERTS.PRODUCTS);
+    },
     CREATE_TABLE: [
         `CREATE TABLE categories (
         category_id INT IDENTITY (1, 1) PRIMARY KEY,
@@ -29,7 +28,8 @@ const SQL_DB = {
         list_price DECIMAL (10, 2) NOT NULL,
         FOREIGN KEY (category_id) REFERENCES categories (category_id),
         FOREIGN KEY (brand_id) REFERENCES brands (brand_id) 
-    )`],
+    )`,
+    ],
     INSERTS: {
         BRANDS: [
             `INSERT INTO brands(brand_id,brand_name) VALUES(1,'Electra')`,
@@ -71,10 +71,9 @@ const SQL_DB = {
             `INSERT INTO products VALUES(17,'Pure Cycles Vine 8-Speed - 2016',4,3,2016,429)`,
             `INSERT INTO products VALUES(18,'Pure Cycles Western 3-Speed - Women''s - 2015/2016',4,3,2016,449)`,
             `INSERT INTO products VALUES(19,'Pure Cycles William 3-Speed - 2016',4,3,2016,449)`,
-            `INSERT INTO products VALUES(20,'Electra Townie Original 7D EQ - Women''s - 2016',1,3,2016,599.99)`
-        ]
-    }
-}
+            `INSERT INTO products VALUES(20,'Electra Townie Original 7D EQ - Women''s - 2016',1,3,2016,599.99)`,
+        ],
+    },
+};
 
 export default SQL_DB;
-

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SQL_DB from '../app/Database';
@@ -10,15 +10,20 @@ import SqlView from './sql-view/SqlView';
 // ---------
 
 export default function App() {
-
     // It is called here to prevent init each time page is changed
-    useEffect(() => { SQL_DB.INIT() } , [])
+    useEffect(() => {
+        SQL_DB.INIT();
+    }, []);
 
     return (
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <BaseView view={SqlView} name={"AlaSQL"} description={"In-memory database on browser"} />
+                    <BaseView
+                        view={SqlView}
+                        name={'AlaSQL'}
+                        description={'In-memory database on browser'}
+                    />
                 </Route>
                 <Route path="/theory">
                     <BaseView view={SampleView} />
