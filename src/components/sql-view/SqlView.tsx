@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import alasql from 'alasql';
 import { fromStore, toStore } from '../../app/Settings';
 import ReactJson from 'react-json-view'
 import { observer } from 'mobx-react';
 import './SqlView.css';
-import SQL_DB from '../../app/Database';
 
 export default observer(function SqlView() {
-
-    useEffect(() => { initDb() }, [])
 
     return (
         <div className="sql-view">
@@ -49,16 +46,3 @@ const getDataset = () => {
         data: fromStore("sql-data", {})
     }
 };
-
-const initDb = () => {
-
-    const {CREATE_TABLE, INSERTS} = SQL_DB;
-
-    // Generate tables
-    alasql(CREATE_TABLE)
-    // Populate tables
-    alasql(INSERTS.BRANDS)
-    alasql(INSERTS.CATEGORIES)
-    alasql(INSERTS.PRODUCTS)
-
-}

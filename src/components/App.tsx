@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import SQL_DB from '../app/Database';
 import BaseView from '../components/base-view/BaseView';
 import SampleView from '../components/sample-view/SampleView';
 import SettingsView from '../components/setting-view/SettingsView';
@@ -9,6 +10,9 @@ import SqlView from './sql-view/SqlView';
 // ---------
 
 export default function App() {
+
+    // It is called here to prevent init each time page is changed
+    useEffect(() => { SQL_DB.INIT() } , [])
 
     return (
         <Router>

@@ -1,4 +1,16 @@
+import alasql from "alasql";
+
 const SQL_DB = {
+    INIT: () => {
+        const { CREATE_TABLE, INSERTS } = SQL_DB;
+        // Generate tables
+        alasql(CREATE_TABLE)
+        // Populate tables
+        alasql(INSERTS.BRANDS)
+        alasql(INSERTS.CATEGORIES)
+        alasql(INSERTS.PRODUCTS)
+    }
+    ,
     CREATE_TABLE: [
         `CREATE TABLE categories (
         category_id INT IDENTITY (1, 1) PRIMARY KEY,
