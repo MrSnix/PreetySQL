@@ -50,6 +50,7 @@
 .base-view__app-wrapper {
     flex: 0.7;
     display: flex;
+    overflow-y: auto;
 }
 
 .base-view__app {
