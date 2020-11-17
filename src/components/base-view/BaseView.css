@@ -172,6 +172,12 @@ a:active {
 }
 
 @media screen and (max-width: 1200px) {
+    .base-view__sidebar {
+        flex: 0.4;
+    }
+    .base-view__app-wrapper {
+        flex: 0.6;
+    }
 }
 
 @media screen and (max-width: 979px) {

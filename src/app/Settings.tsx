@@ -9,33 +9,111 @@ import {
 const Settings: ISettings = observable({
     headers: [
         {
-            name: 'General',
-            description: 'Common settings',
+            name: 'Display',
+            description: 'Data viewer settings',
             options: [
                 {
-                    name: 'Rule-1',
-                    description: 'My cool description',
-                    value: 'Value',
-                    type: 'string',
+                    name: 'Theme',
+                    value: 'rjv-default',
+                    description:
+                        'Style of color schema (light-only are displayed)',
+                    type: 'options',
+                    set: [
+                        'rjv-default',
+                        'apathy:inverted',
+                        'bright:inverted',
+                        'grayscale:inverted',
+                        'shapeshifter:inverted',
+                        'summerfruit:inverted',
+                    ],
                 },
                 {
-                    name: 'Rule-2',
-                    description: 'My cool description',
-                    value: 120,
+                    name: 'Icon Style',
+                    description: 'Style of expand/collapse icons',
+                    value: 'circle',
+                    type: 'options',
+                    set: ['circle', 'square', 'triangle'],
+                },
+                {
+                    name: 'Indent Width',
+                    description: 'Set the indent-width for nested objects',
+                    value: 4,
                     type: 'number',
                 },
                 {
-                    name: 'Rule-3',
-                    description: 'My cool description',
+                    name: 'Node collapsed',
+                    description:
+                        'When enabled, all nodes will be collapsed by default',
+                    value: false,
+                    type: 'boolean',
+                },
+                {
+                    name: 'Object size',
+                    description:
+                        'When enabled, objects and arrays are labeled with size',
                     value: true,
                     type: 'boolean',
                 },
                 {
-                    name: 'Rule-4',
-                    description: 'My cool description',
-                    value: 'Option-C',
+                    name: 'Data Types',
+                    description: 'When enabled, data type labels prefix values',
+                    value: false,
+                    type: 'boolean',
+                },
+            ],
+        },
+        {
+            name: 'Database',
+            description: 'Schema settings',
+            options: [
+                {
+                    name: 'Use valueof()',
+                    description:
+                        'When enabled, convert all values with .valueOf() function before comparing',
+                    value: false,
+                    type: 'boolean',
+                },
+                {
+                    name: 'DateTime Format',
+                    description: 'How to handle DATE and DATETIME types',
+                    value: 'sql',
                     type: 'options',
-                    set: ['Option-A', 'Option-B', 'Option-C'],
+                    set: ['sql', 'javascript'],
+                },
+                {
+                    name: 'Case Sensitive',
+                    description:
+                        'When enabled, table and column names are case sensitive and converted to lower-case',
+                    value: true,
+                    type: 'boolean',
+                },
+                {
+                    name: 'Autocommit',
+                    description:
+                        'When enabled, every database operation is a transaction that is committed when performed',
+                    value: true,
+                    type: 'boolean',
+                },
+                {
+                    name: 'Check for NaN',
+                    description:
+                        'When enabled, check for NaN and convert it to undefined',
+                    value: false,
+                    type: 'boolean',
+                },
+                {
+                    name: 'Use cache',
+                    description:
+                        'When enabled, cache is used to improve output performance',
+                    value: true,
+                    type: 'boolean',
+                },
+                {
+                    name: 'Do not count',
+                    description:
+                        'When enabled, stops the message that shows the count of the number of rows affected by a query',
+                    value: false,
+                    type: 'boolean',
                 },
             ],
         },

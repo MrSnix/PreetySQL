@@ -52,11 +52,3 @@
     -o-transition: color 0.5s ease;
     transition: color 0.5s ease;
 }
-
-.sql-err {
-    color: #b62020;
-}
-
-.sql-ok {
-    color: #4a934a;
-}

@@ -31,7 +31,7 @@ export default observer(function SqlView() {
                         }}
                     />
                     <button
-                        className={'sql-view__input-btn ' + parseQuery()}
+                        className={'sql-view__input-btn'}
                         onClick={execQuery}
                     >
                         <Navigation2 />
@@ -41,20 +41,6 @@ export default observer(function SqlView() {
         </div>
     );
 });
-
-const parseQuery = () => {
-    const input = fromStore('sql-query', '');
-    let obj = '';
-    if (input) {
-        try {
-            alasql.parse(input);
-            obj = 'sql-ok';
-        } catch (ex) {
-            obj = 'sql-err';
-        }
-    }
-    return obj;
-};
 
 const execQuery = () => {
     // Retrieve query

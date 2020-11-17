@@ -1,14 +1,7 @@
 import React, { ElementType } from 'react';
 import './BaseView.css';
 
-import {
-    Home,
-    Sliders,
-    User,
-    BookOpen,
-    ArrowLeft,
-    HelpCircle,
-} from 'react-feather';
+import { Home, Sliders, BookOpen, ArrowLeft, HelpCircle } from 'react-feather';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import { Location } from 'history';
 
