@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import alasql from 'alasql';
-import { fromStore, toStore } from '../../app/Settings';
+import { fromOption, fromStore, toStore } from '../../app/Settings';
 import ReactJson from 'react-json-view';
 import { observer } from 'mobx-react';
 import './SqlView.css';
 import { Navigation2 } from 'react-feather';
 
 export default observer(function SqlView() {
+    useEffect(() => setupDatabase(), []);
+
     return (
         <div className="sql-view">
             <div className="sql-view__display">
                 <ReactJson
                     src={getDataset()}
                     name="Visualizer"
-                    displayDataTypes={false}
-                    iconStyle="circle"
+                    theme={fromOption('Display', 'Theme', 'rjv-default') as any}
+                    displayDataTypes={
+                        fromOption('Display', 'Data Types', false) as boolean
+                    }
+                    iconStyle={
+                        fromOption('Display', 'Icon Style', 'circle') as any
+                    }
+                    indentWidth={
+                        fromOption('Display', 'Indent Width', 4) as number
+                    }
+                    collapsed={
+                        fromOption(
+                            'Display',
+                            'Node collapsed',
+                            false
+                        ) as boolean
+                    }
+                    displayObjectSize={
+                        fromOption('Display', 'Object size', true) as boolean
+                    }
                 />
             </div>
             <div className="sql-view__ctr-box">
@@ -41,6 +61,44 @@ export default observer(function SqlView() {
         </div>
     );
 });
+
+const setupDatabase = () => {
+    alasql.options.valueof = fromOption(
+        'Database',
+        'Use valueof()',
+        false
+    ) as boolean;
+    alasql.options.datetimeformat = fromOption(
+        'Database',
+        'DateTime Format',
+        'sql'
+    ) as string;
+    alasql.options.casesensitive = fromOption(
+        'Database',
+        'Case Sensitive',
+        true
+    ) as boolean;
+    alasql.options.autocommit = fromOption(
+        'Database',
+        'Autocommit',
+        true
+    ) as boolean;
+    alasql.options.nan = fromOption(
+        'Database',
+        'Check for NaN',
+        false
+    ) as boolean;
+    alasql.options.cache = fromOption(
+        'Database', 
+        'Use cache', 
+        true
+    ) as boolean;
+    alasql.options.nocount = fromOption(
+        'Database',
+        'Do not count',
+        false
+    ) as boolean;
+};
 
 const execQuery = () => {
     // Retrieve query

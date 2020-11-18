@@ -136,10 +136,23 @@ const fn1 = (key: string, value: PrimitiveTypes) => {
 const fn2 = (key: string, defaultValue: PrimitiveTypes) => {
     return Settings.store[key] ? Settings.store[key] : defaultValue;
 };
+const fn3 = (header: string, option: string, defaultValue: PrimitiveTypes) => {
+    let value = defaultValue;
+    const h1 = Settings.headers.filter((e) => e.name === header);
+
+    if (h1.length === 1) {
+        const o1 = h1[0].options.filter((e) => e.name === option);
+
+        if (o1.length === 1) value = o1[0].value;
+    }
+
+    return value;
+};
 
 export const toOption = action(fn0);
 export const toStore = action(fn1);
 
 export const fromStore = fn2;
+export const fromOption = fn3;
 
 export default Settings;
