@@ -7,6 +7,7 @@ import './SqlView.css';
 import { Navigation2 } from 'react-feather';
 
 export default observer(function SqlView() {
+    
     useEffect(() => setupDatabase(), []);
 
     return (
@@ -88,11 +89,7 @@ const setupDatabase = () => {
         'Check for NaN',
         false
     ) as boolean;
-    alasql.options.cache = fromOption(
-        'Database', 
-        'Use cache', 
-        true
-    ) as boolean;
+    alasql.options.cache = fromOption('Database', 'Use cache', true) as boolean;
     alasql.options.nocount = fromOption(
         'Database',
         'Do not count',
