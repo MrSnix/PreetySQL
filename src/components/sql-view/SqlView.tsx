@@ -4,17 +4,16 @@ import { fromOption, fromStore, toStore } from '../../app/Settings';
 import ReactJson from 'react-json-view';
 import { observer } from 'mobx-react';
 import './SqlView.css';
-import { Navigation2 } from 'react-feather';
+import { Loader, Navigation2 } from 'react-feather';
 
 export default observer(function SqlView() {
-    
     useEffect(() => setupDatabase(), []);
 
     return (
         <div className="sql-view">
             <div className="sql-view__display">
                 <ReactJson
-                    src={getDataset()}
+                    src={dataset()}
                     name="Visualizer"
                     theme={fromOption('Display', 'Theme', 'rjv-default') as any}
                     displayDataTypes={
@@ -36,7 +35,7 @@ export default observer(function SqlView() {
                     displayObjectSize={
                         fromOption('Display', 'Object size', true) as boolean
                     }
-                />
+                />{' '}
             </div>
             <div className="sql-view__ctr-box">
                 <div className="sql-view__ctr-group">
@@ -51,12 +50,9 @@ export default observer(function SqlView() {
                             if (e.key === 'Enter') execQuery();
                         }}
                     />
-                    <button
-                        className={'sql-view__input-btn'}
-                        onClick={execQuery}
-                    >
-                        <Navigation2 />
-                    </button>
+                    {fromStore('sql-isLoading', false)
+                        ? spinner()
+                        : navigation()}
                 </div>
             </div>
         </div>
@@ -97,7 +93,8 @@ const setupDatabase = () => {
     ) as boolean;
 };
 
-const execQuery = () => {
+const execQuery = async () => {
+    toStore('sql-isLoading', true);
     // Retrieve query
     const query = fromStore('sql-query', '');
     // Remove input
@@ -105,6 +102,7 @@ const execQuery = () => {
     // Execute if value is meaningful
     if (query) {
         try {
+            await new Promise((r) => setTimeout(r, 3000));
             toStore('sql-data', alasql(query));
         } catch (err) {
             if (err.name !== 'TypeError')
@@ -115,9 +113,26 @@ const execQuery = () => {
                 });
         }
     }
+    toStore('sql-isLoading', false);
 };
 
-const getDataset = () => {
+const spinner = () => {
+    return (
+        <div className="sql-view__input-btn">
+            <Loader className="sql-view__loader" />
+        </div>
+    );
+};
+
+const navigation = () => {
+    return (
+        <button className="sql-view__input-btn" onClick={execQuery}>
+            <Navigation2 />
+        </button>
+    );
+};
+
+const dataset = () => {
     return {
         data: fromStore('sql-data', {}),
     };

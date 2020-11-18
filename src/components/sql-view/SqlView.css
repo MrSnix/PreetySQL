@@ -8,7 +8,7 @@
 .sql-view__display {
     flex: 1;
     margin: 2rem;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .sql-view__ctr-box {
@@ -47,8 +47,46 @@
     text-transform: uppercase;
     outline: none;
     cursor: pointer;
-    -webkit-transition: color 0.5s ease;
-    -moz-transition: color 0.5s ease;
-    -o-transition: color 0.5s ease;
-    transition: color 0.5s ease;
+}
+
+.sql-view__loader {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -o-animation: load-me 1.5s infinite linear;
+    -moz-animation: load-me 1.5s infinite linear;
+    -webkit-animation: load-me 1.5s infinite linear;
+    animation: load-me 1.5s infinite linear;
+}
+
+@-webkit-keyframes load-me {
+    0% {
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load-me {
+    0% {
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
