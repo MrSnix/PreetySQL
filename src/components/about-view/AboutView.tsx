@@ -19,7 +19,7 @@ export default function AboutView() {
                         for those approaching web development.
                     </p>
                     <p>
-                        Prototyping & Development
+                        Prototyping &#38; Development
                         <br />
                         G. Baittiner
                     </p>
@@ -30,7 +30,7 @@ export default function AboutView() {
                 <ul className="about-view__list">
                     <li>
                         <ul className="about-view__list">
-                            <li>// Technologies</li>
+                            <li>&#47;&#47; Technologies</li>
                             <li>
                                 -{' '}
                                 <a
@@ -86,7 +86,7 @@ export default function AboutView() {
                     </li>
                     <li>
                         <ul className="about-view__list">
-                            <li>// UI & Components</li>
+                            <li>&#47;&#47; UI &#38; Components</li>
                             <li>
                                 -{' '}
                                 <a
@@ -122,7 +122,7 @@ export default function AboutView() {
                     </li>
                     <li>
                         <ul className="about-view__list">
-                            <li>// Art & Visual</li>
+                            <li>&#47;&#47; Art &#38; Visual</li>
                             <li>
                                 -{' '}
                                 <a
@@ -159,7 +159,8 @@ export default function AboutView() {
                             >
                                 <b>Issues</b>
                             </a>
-                            : Did you find an issue or a bug? Let me know about it
+                            : Did you find an issue or a bug? Let me know about
+                            it
                         </li>
                         <li>
                             -{' '}
