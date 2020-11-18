@@ -102,7 +102,6 @@ const execQuery = async () => {
     // Execute if value is meaningful
     if (query) {
         try {
-            await new Promise((r) => setTimeout(r, 3000));
             toStore('sql-data', alasql(query));
         } catch (err) {
             if (err.name !== 'TypeError')
