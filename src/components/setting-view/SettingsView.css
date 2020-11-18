@@ -126,6 +126,8 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 2rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .settings-view__slider:before {
