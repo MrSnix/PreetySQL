@@ -4,10 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../../app/assets/background.png') top no-repeat;
+    background: url('../../app/assets/background.png') no-repeat;
     background-size: cover;
-    animation: bg-animation 45s infinite;
-    -webkit-animation: bg-animation 45s infinite;
+    animation: bg-animation 30s ease-in-out infinite;
+    -webkit-animation: bg-animation 30s ease-in-out infinite;
 }
 
 .base-view__content {
@@ -43,7 +43,10 @@
 .base-view__header {
     font-weight: 900;
     margin: 0;
-    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
 }
 
 .base-view__sub-header {
