@@ -131,10 +131,10 @@
 .settings-view__slider:before {
     position: absolute;
     content: '';
-    height: 0.85rem;
-    width: 0.85rem;
+    height: 0.75rem;
+    width: 0.75rem;
     left: 4px;
-    bottom: 3px;
+    bottom: 4px;
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -150,7 +150,7 @@
 }
 
 .settings-view__checkbox:checked + .settings-view__slider:before {
-    -webkit-transform: translateX(1.1rem);
-    -ms-transform: translateX(1.1rem);
-    transform: translateX(1.1rem);
+    -webkit-transform: translateX(1.2rem);
+    -ms-transform: translateX(1.2rem);
+    transform: translateX(1.2rem);
 }
