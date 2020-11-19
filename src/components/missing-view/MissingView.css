@@ -1,0 +1,30 @@
+.missing-view {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.missing-view__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24rem;
+    height: 24rem;
+}
+
+.missing-view__mr-fluffy {
+    height: auto;
+    width: 100%;
+}
+
+.missing-view__text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+}

@@ -5,6 +5,7 @@ import SQL_DB from '../app/Database';
 import BaseView from '../components/base-view/BaseView';
 import SettingsView from '../components/setting-view/SettingsView';
 import AboutView from './about-view/AboutView';
+import MissingView from './missing-view/MissingView';
 import SqlView from './sql-view/SqlView';
 import TheoryView from './theory-view/TheoryView';
 
@@ -51,6 +52,7 @@ export default function App() {
                         background={'/assets/about.jpg'}
                     />
                 </Route>
+                <Route component={MissingView} />
             </Switch>
         </Router>
     );
