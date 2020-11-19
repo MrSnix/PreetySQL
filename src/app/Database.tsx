@@ -80,8 +80,8 @@ const SQL_DB = {
             '-- Create and delete a database, names are case-sensitive.\n' +
             'CREATE DATABASE myDatabase;\n' +
             'DROP DATABASE myDatabase;',
-        EX2: '-- List available databases\n' + 'SHOW DATABASES;',
-        EX3: '-- Use a particular existing database\n' + 'USE dbo;',
+        EX2: '-- List available databases\nSHOW DATABASES;',
+        EX3: '-- Use a particular existing database\nUSE dbo;',
         EX4:
             '-- The * symbol is used as "ALL" keyword quantifier\n' +
             'SELECT * FROM products;',
@@ -140,7 +140,7 @@ const SQL_DB = {
         EX20:
             "-- Delete only the row from the customers table whitch matches 'Luca' as first_name\n" +
             "DELETE FROM customers WHERE first_name='Luca'",
-        EX21: '-- Bye bye customers table\n' + 'DROP TABLE customers',
+        EX21: '-- Bye bye customers table\nDROP TABLE customers',
     },
 };
 
