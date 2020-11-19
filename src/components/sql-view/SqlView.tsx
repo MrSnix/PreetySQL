@@ -5,16 +5,22 @@ import ReactJson from 'react-json-view';
 import { observer } from 'mobx-react';
 import './SqlView.css';
 import { Loader, Navigation2 } from 'react-feather';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
 export default observer(function SqlView() {
     useEffect(() => setupDatabase(), []);
 
     return (
         <div className="sql-view">
-            <div className="sql-view__display">
+            <OverlayScrollbarsComponent
+                className="sql-view__display"
+                options={{ scrollbars: { autoHide: 'scroll' } }}
+            >
                 <ReactJson
                     src={dataset()}
                     name="Visualizer"
+                    style={{ overflow: 'hidden' }}
                     theme={fromOption('Display', 'Theme', 'rjv-default') as any}
                     displayDataTypes={
                         fromOption('Display', 'Data Types', false) as boolean
@@ -36,7 +42,7 @@ export default observer(function SqlView() {
                         fromOption('Display', 'Object size', true) as boolean
                     }
                 />{' '}
-            </div>
+            </OverlayScrollbarsComponent>
             <div className="sql-view__ctr-box">
                 <div className="sql-view__ctr-group">
                     <p>user@local&gt;</p>

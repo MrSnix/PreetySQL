@@ -112,6 +112,17 @@ export default function AboutView() {
                                 -{' '}
                                 <a
                                     className="about-view__link"
+                                    href="https://www.npmjs.com/package/overlayscrollbars-react"
+                                >
+                                    <b>react-overlayscrollbars</b>
+                                </a>
+                                : improve the experience of internal web page
+                                scrolling
+                            </li>
+                            <li>
+                                -{' '}
+                                <a
+                                    className="about-view__link"
                                     href="https://reactrouter.com/"
                                 >
                                     <b>react-router</b>

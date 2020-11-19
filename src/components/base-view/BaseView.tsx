@@ -5,6 +5,9 @@ import { Home, Sliders, BookOpen, ArrowLeft, HelpCircle } from 'react-feather';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import { Location } from 'history';
 
+import 'overlayscrollbars/css/OverlayScrollbars.css';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+
 export default function BaseView(props: {
     name?: string;
     description?: string;
@@ -47,10 +50,14 @@ export default function BaseView(props: {
                     </div>
                 </div>
                 <div className="base-view__app-wrapper">
-                    <div className="base-view__app">
-                        {nav && breadcrumbs(location)}
+                    {nav && breadcrumbs(location)}
+
+                    <OverlayScrollbarsComponent
+                        className="base-view__app"
+                        options={{ scrollbars: { autoHide: 'scroll' } }}
+                    >
                         {View && <View />}
-                    </div>
+                    </OverlayScrollbarsComponent>
                     <div className="base-view__menu">
                         <ul>
                             <li>

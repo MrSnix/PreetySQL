@@ -83,7 +83,6 @@
     -webkit-box-shadow: inset 2px 0px 5px -2px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: inset 2px 0px 5px -2px rgba(0, 0, 0, 0.15);
     box-shadow: inset 2px 0px 5px -2px rgba(0, 0, 0, 0.15);
-    overflow-y: auto;
 }
 
 .base-view__menu {
@@ -166,7 +165,10 @@
     padding-right: 0.15rem;
 }
 
-a, a:link, a:visited, a:active {
+a,
+a:link,
+a:visited,
+a:active {
     color: black;
     padding: 0;
     margin: 0;
@@ -236,4 +238,5 @@ a, a:link, a:visited, a:active {
     }
 }
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
+}
