@@ -5,7 +5,7 @@ export default function AboutView() {
     return (
         <div className="about-view">
             <div className="about-view__paragraph">
-                <h3 className="about-view__title">Overview</h3>
+                <h3 className="about-view__title">Why ?</h3>
                 <div className="about-view__content">
                     <p>
                         I love programming.
