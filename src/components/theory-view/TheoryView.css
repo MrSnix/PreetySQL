@@ -15,10 +15,16 @@
     align-items: center;
 }
 
-.theory-view__header {
+.theory-view__header,
+.theory-view__sub-header {
     font-weight: 400;
     margin: 0;
     padding: 0;
+}
+
+.theory-view__sub-header {
+    text-transform: uppercase;
+    margin: 1rem 0;
 }
 
 .theory-view__text {
@@ -27,4 +33,8 @@
 
 .theory-view a {
     text-decoration: underline;
+}
+
+.theory-view__resources li {
+    margin: 0.5rem 0;
 }

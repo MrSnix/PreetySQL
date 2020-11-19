@@ -7,6 +7,7 @@ export default function MissingView() {
         <div className="missing-view">
             <div className="missing-view__container">
                 <img
+                    alt="mr-fluffy cat"
                     className="missing-view__mr-fluffy"
                     src="/assets/error.jpg"
                 />

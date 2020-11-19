@@ -74,6 +74,74 @@ const SQL_DB = {
             `INSERT INTO products VALUES(20,'Electra Townie Original 7D EQ - Women''s - 2016',1,3,2016,599.99)`,
         ],
     },
+    EXAMPLES: {
+        EX0: '-- Hi, this is a comment',
+        EX1:
+            '-- Create and delete a database, names are case-sensitive.\n' +
+            'CREATE DATABASE myDatabase;\n' +
+            'DROP DATABASE myDatabase;',
+        EX2: '-- List available databases\n' + 'SHOW DATABASES;',
+        EX3: '-- Use a particular existing database\n' + 'USE dbo;',
+        EX4:
+            '-- The * symbol is used as "ALL" keyword quantifier\n' +
+            'SELECT * FROM products;',
+        EX5:
+            '-- Retrieve all rows from the products table\n' +
+            '-- but only the product_name and list_price columns.\n' +
+            'SELECT product_name, list_price FROM products',
+        EX6:
+            '-- Retrieve the first five rows from the products table\n' +
+            'SELECT * FROM products LIMIT 5;',
+        EX7:
+            '-- Retrieve all products where the list_price is greater than 700\n' +
+            'SELECT * FROM products WHERE list_price > 700;',
+        EX8:
+            "-- Retrieve all products where the product_name value contains 'set'\n" +
+            "SELECT * FROM products WHERE product_name LIKE '%set%';",
+        EX9:
+            '-- Retrieve all products where the product_name value starts with Trek 820 - 20\n' +
+            '-- and has exactly two letters after it\n' +
+            "SELECT * FROM products WHERE product_name LIKE 'Trek 820 - 20__';",
+        EX10:
+            '-- Retrieve all products sorting them by product_name (ascending) \n' +
+            'SELECT * FROM products ORDER BY product_name;',
+        EX11:
+            '-- Retrieve all products sorting them by product_name (ascending) \n' +
+            'SELECT * FROM products ORDER BY product_name ASC;',
+        EX12:
+            '-- Retrieve all products sorting them by product_name (descending) \n' +
+            'SELECT * FROM products ORDER BY product_name DESC;',
+        EX13:
+            '-- Retrieve all products and join brands with their names on each row\n' +
+            'SELECT * FROM products JOIN brands on brands.brand_id = products.brand_id;',
+        EX14:
+            '-- Retrieve all tables inside the current database\n' +
+            'SHOW TABLES;',
+        EX15:
+            '-- Create a table called customers, with the two columns shown\n' +
+            'CREATE TABLE customers(\n' +
+            '   id INT PRIMARY KEY AUTOINCREMENT,\n' +
+            '   first_name CHAR(30),\n' +
+            '   last_name CHAR(30)\n' +
+            ');',
+        EX16:
+            '-- Insert two row of data into the table customers\n' +
+            "INSERT INTO customers VALUES('Giuseppe','Baittiner');\n" +
+            "INSERT INTO customers VALUES('Luca','Iacomino');",
+        EX17:
+            '-- In table customers, change first_name to Nello only where is matched with Iacomino\n' +
+            "UPDATE customers SET first_name='Nello' WHERE last_name='Iacomino';",
+        EX18:
+            '-- In table customers, change first_name to Nello on all the customers\n' +
+            "UPDATE customers SET first_name='Nello';",
+        EX19:
+            '-- Delete all rows from the customers table, leaving the empty table\n' +
+            'DELETE FROM customers',
+        EX20:
+            "-- Delete only the row from the customers table whitch matches 'Luca' as first_name\n" +
+            "DELETE FROM customers WHERE first_name='Luca'",
+        EX21: '-- Bye bye customers table\n' + 'DROP TABLE customers',
+    },
 };
 
 export default SQL_DB;

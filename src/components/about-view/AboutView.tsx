@@ -102,6 +102,16 @@ export default function AboutView() {
                                 -{' '}
                                 <a
                                     className="about-view__link"
+                                    href="https://www.npmjs.com/package/react-syntax-highlighter"
+                                >
+                                    <b>react-syntax-highlighter</b>
+                                </a>
+                                : Syntax highlighting component for React
+                            </li>
+                            <li>
+                                -{' '}
+                                <a
+                                    className="about-view__link"
                                     href="https://reactrouter.com/"
                                 >
                                     <b>react-router</b>
