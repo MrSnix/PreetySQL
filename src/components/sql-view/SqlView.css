@@ -41,6 +41,7 @@
     margin: 0 1rem;
 }
 
+.sql-view__tooltip-close-btn,
 .sql-view__input-btn {
     display: flex;
     justify-content: center;
@@ -64,6 +65,37 @@
     -moz-animation: load-me 1.5s infinite linear;
     -webkit-animation: load-me 1.5s infinite linear;
     animation: load-me 1.5s infinite linear;
+}
+
+.sql-view__tooltip {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.sql-view__tooltip-header {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.sql-view__tooltip-title {
+    flex: 1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.sql-view__tooltip-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin-left: 1rem;
+}
+
+.sql-view__tooltip-close-btn {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-left: none;
 }
 
 @-webkit-keyframes load-me {

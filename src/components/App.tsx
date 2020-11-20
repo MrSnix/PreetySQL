@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SQL_DB from '../app/Database';
+import { toStore } from '../app/Settings';
 import BaseView from '../components/base-view/BaseView';
 import SettingsView from '../components/setting-view/SettingsView';
 import AboutView from './about-view/AboutView';
@@ -15,6 +16,7 @@ export default function App() {
     // It is called here to prevent init each time page is changed
     useEffect(() => {
         SQL_DB.INIT();
+        toStore('sql-isInit', false);
     }, []);
 
     return (

@@ -2,48 +2,24 @@ import React, { useEffect } from 'react';
 import alasql from 'alasql';
 import { fromOption, fromStore, toStore } from '../../app/Settings';
 import ReactJson from 'react-json-view';
-import { observer } from 'mobx-react';
 import './SqlView.css';
-import { Loader, Navigation2 } from 'react-feather';
+import { Loader, Navigation2, XCircle } from 'react-feather';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+import { observer } from 'mobx-react';
 
 export default observer(function SqlView() {
     useEffect(() => setupDatabase(), []);
-
     return (
         <div className="sql-view">
             <OverlayScrollbarsComponent
                 className="sql-view__display"
                 options={{ scrollbars: { autoHide: 'scroll' } }}
             >
-                <ReactJson
-                    src={dataset()}
-                    name="Visualizer"
-                    style={{ overflow: 'hidden' }}
-                    theme={fromOption('Display', 'Theme', 'rjv-default') as any}
-                    displayDataTypes={
-                        fromOption('Display', 'Data Types', false) as boolean
-                    }
-                    iconStyle={
-                        fromOption('Display', 'Icon Style', 'circle') as any
-                    }
-                    indentWidth={
-                        fromOption('Display', 'Indent Width', 4) as number
-                    }
-                    collapsed={
-                        fromOption(
-                            'Display',
-                            'Node collapsed',
-                            false
-                        ) as boolean
-                    }
-                    displayObjectSize={
-                        fromOption('Display', 'Object size', true) as boolean
-                    }
-                />{' '}
+                {viewer()}
             </OverlayScrollbarsComponent>
             <div className="sql-view__ctr-box">
+                {!fromStore('sql-isInit', false) && tooltip()}
                 <div className="sql-view__ctr-group">
                     <p>user@local&gt;</p>
                     <input
@@ -53,7 +29,7 @@ export default observer(function SqlView() {
                         value={fromStore('sql-query', '')}
                         onChange={(e) => toStore('sql-query', e.target.value)}
                         onKeyPress={(e) => {
-                            if (e.key === 'Enter') execQuery();
+                            if (e.key === 'Enter') query();
                         }}
                     />
                     {fromStore('sql-isLoading', false)
@@ -64,6 +40,46 @@ export default observer(function SqlView() {
         </div>
     );
 });
+
+const tooltip = () => {
+    return (
+        <div className="sql-view__tooltip">
+            <div className="sql-view__tooltip-header">
+                <h4 className="sql-view__tooltip-title">Welcome</h4>
+                <div
+                    className="sql-view__tooltip-close-btn"
+                    onClick={() => toStore('sql-isInit', true)}
+                >
+                    <XCircle />
+                </div>
+            </div>
+            <p className="sql-view__tooltip-text">
+                Everybody wants to rule the world
+            </p>
+        </div>
+    );
+};
+
+const viewer = () => {
+    return (
+        <ReactJson
+            src={dataset()}
+            name="Visualizer"
+            theme={fromOption('Display', 'Theme', 'rjv-default') as any}
+            displayDataTypes={
+                fromOption('Display', 'Data Types', false) as boolean
+            }
+            iconStyle={fromOption('Display', 'Icon Style', 'circle') as any}
+            indentWidth={fromOption('Display', 'Indent Width', 4) as number}
+            collapsed={
+                fromOption('Display', 'Node collapsed', false) as boolean
+            }
+            displayObjectSize={
+                fromOption('Display', 'Object size', true) as boolean
+            }
+        />
+    );
+};
 
 const setupDatabase = () => {
     alasql.options.valueof = fromOption(
@@ -99,7 +115,7 @@ const setupDatabase = () => {
     ) as boolean;
 };
 
-const execQuery = async () => {
+const query = async () => {
     toStore('sql-isLoading', true);
     // Retrieve query
     const query = fromStore('sql-query', '');
@@ -131,7 +147,7 @@ const spinner = () => {
 
 const navigation = () => {
     return (
-        <button className="sql-view__input-btn" onClick={execQuery}>
+        <button className="sql-view__input-btn" onClick={query}>
             <Navigation2 />
         </button>
     );
