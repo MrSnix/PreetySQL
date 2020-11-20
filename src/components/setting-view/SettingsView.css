@@ -156,3 +156,7 @@
     -ms-transform: translateX(1.2rem);
     transform: translateX(1.2rem);
 }
+
+.settings-view__options {
+    padding-bottom: 0.25rem;
+}
