@@ -20,7 +20,6 @@
     border-top: 1px solid #d2d2d2;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    position: relative;
 }
 
 .sql-view__ctr-group {
@@ -73,12 +72,8 @@
 }
 
 .sql-view__tooltip {
-    border-top: 1px solid #d2d2d2;
     border-bottom: 1px solid #d2d2d2;
-    position: absolute;
-    bottom: 3.5rem;
-    right: 0;
-    left: 0;
+    background-color: #ffffff;
 }
 
 .sql-view__tooltip-header {
