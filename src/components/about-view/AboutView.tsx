@@ -18,11 +18,6 @@ export default function AboutView() {
                         <br />
                         for those approaching web development.
                     </p>
-                    <p>
-                        Prototyping &#38; Development
-                        <br />
-                        G. Baittiner
-                    </p>
                 </div>
             </div>
             <div className="about-view__paragraph">
