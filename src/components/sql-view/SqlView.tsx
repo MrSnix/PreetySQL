@@ -7,6 +7,7 @@ import { Loader, Navigation2, XCircle } from 'react-feather';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import { observer } from 'mobx-react';
+import { Link } from 'react-router-dom';
 
 export default observer(function SqlView() {
     useEffect(() => setupDatabase(), []);
@@ -53,9 +54,22 @@ const tooltip = () => {
                     <XCircle />
                 </div>
             </div>
-            <p className="sql-view__tooltip-text">
-                Everybody wants to rule the world
-            </p>
+            <div className="sql-view__tooltip-paragraph">
+                <h5 className="sql-view__tooltip-title">How to start</h5>
+                <p className="sql-view__tooltip-text">
+                    <ol className="sql-view__tooltip-list">
+                        <li>
+                            Check the{' '}
+                            <Link className={'sql-view__url'} to={'/theory'}>
+                                theory
+                            </Link>
+                        </li>
+                        <li>Learn about databases, tables and entries</li>
+                        <li>Execute commands using the console</li>
+                        <li>Have fun!</li>
+                    </ol>
+                </p>
+            </div>
         </div>
     );
 };
