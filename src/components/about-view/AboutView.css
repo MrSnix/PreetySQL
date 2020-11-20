@@ -1,3 +1,7 @@
+.about-view {
+    padding-bottom: 0.25rem;
+}
+
 .about-view__paragraph {
     font-family: 'Lato', sans-serif;
     font-weight: 300;

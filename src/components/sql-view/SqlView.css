@@ -84,7 +84,7 @@
 }
 
 .sql-view__tooltip-paragraph {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .sql-view__tooltip-title {
@@ -95,13 +95,11 @@
     margin-left: 1rem;
 }
 
-.sql-view__tooltip-text {
+.sql-view__tooltip-list {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-}
-
-.sql-view__tooltip-list {
     margin: 0;
+    margin-top: 0.75rem;
 }
 
 .sql-view__tooltip-close-btn {

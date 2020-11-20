@@ -56,19 +56,17 @@ const tooltip = () => {
             </div>
             <div className="sql-view__tooltip-paragraph">
                 <h5 className="sql-view__tooltip-title">How to start</h5>
-                <p className="sql-view__tooltip-text">
-                    <ol className="sql-view__tooltip-list">
-                        <li>
-                            Check the{' '}
-                            <Link className={'sql-view__url'} to={'/theory'}>
-                                theory
-                            </Link>
-                        </li>
-                        <li>Learn about databases, tables and entries</li>
-                        <li>Execute commands using the console</li>
-                        <li>Have fun!</li>
-                    </ol>
-                </p>
+                <ol className="sql-view__tooltip-list">
+                    <li>
+                        Check the{' '}
+                        <Link className={'sql-view__url'} to={'/theory'}>
+                            theory
+                        </Link>
+                    </li>
+                    <li>Learn about databases, tables and entries</li>
+                    <li>Execute commands using the console</li>
+                    <li>Have fun!</li>
+                </ol>
             </div>
         </div>
     );
