@@ -2,7 +2,7 @@
 
 ## Overview
 
-### What is it?
+### What is this?
 
 I love programming and every now and then I pull out some bizarre project like this one. Preety is an **educational tool** to make the SQL learning experience more appealing. It is made up of a lightweight relational database based upon **AlaSQL.js** and its extensions to the language. AlaSQL it's working towards a full database engine complying with most of the SQL-99 language, spiced up with additional syntax for NoSQL (schema-less) data and graph networks. This project was born for fun and I hope it can be an inspiration for those approaching web development. Everything was designed and written from scratch.
 
